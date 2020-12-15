@@ -9,21 +9,25 @@
 /* Begin PBXBuildFile section */
 		FB2CCA192588BBC300B189DA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB2CCA182588BBC300B189DA /* AppDelegate.swift */; };
 		FB2CCA1B2588BBC300B189DA /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB2CCA1A2588BBC300B189DA /* SceneDelegate.swift */; };
-		FB2CCA1D2588BBC300B189DA /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB2CCA1C2588BBC300B189DA /* ViewController.swift */; };
+		FB2CCA1D2588BBC300B189DA /* MainVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB2CCA1C2588BBC300B189DA /* MainVC.swift */; };
 		FB2CCA202588BBC300B189DA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FB2CCA1E2588BBC300B189DA /* Main.storyboard */; };
 		FB2CCA222588BBC400B189DA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FB2CCA212588BBC400B189DA /* Assets.xcassets */; };
 		FB2CCA252588BBC400B189DA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FB2CCA232588BBC400B189DA /* LaunchScreen.storyboard */; };
+		FB4F32162588F66500EC89EF /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB4F32152588F66500EC89EF /* Color.swift */; };
+		FB4F32192588FCAF00EC89EF /* ContainerVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB4F32182588FCAF00EC89EF /* ContainerVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		FB2CCA152588BBC300B189DA /* Recipe Practice.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Recipe Practice.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		FB2CCA182588BBC300B189DA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FB2CCA1A2588BBC300B189DA /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		FB2CCA1C2588BBC300B189DA /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		FB2CCA1C2588BBC300B189DA /* MainVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainVC.swift; sourceTree = "<group>"; };
 		FB2CCA1F2588BBC300B189DA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		FB2CCA212588BBC400B189DA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		FB2CCA242588BBC400B189DA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		FB2CCA262588BBC400B189DA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FB4F32152588F66500EC89EF /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
+		FB4F32182588FCAF00EC89EF /* ContainerVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContainerVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,15 +60,41 @@
 		FB2CCA172588BBC300B189DA /* Recipe Practice */ = {
 			isa = PBXGroup;
 			children = (
+				FB4F320E2588F12A00EC89EF /* Helper */,
+				FB4F32132588F55E00EC89EF /* Model */,
+				FB2CCA2E2588C7BF00B189DA /* MainPage */,
 				FB2CCA182588BBC300B189DA /* AppDelegate.swift */,
 				FB2CCA1A2588BBC300B189DA /* SceneDelegate.swift */,
-				FB2CCA1C2588BBC300B189DA /* ViewController.swift */,
 				FB2CCA1E2588BBC300B189DA /* Main.storyboard */,
 				FB2CCA212588BBC400B189DA /* Assets.xcassets */,
 				FB2CCA232588BBC400B189DA /* LaunchScreen.storyboard */,
 				FB2CCA262588BBC400B189DA /* Info.plist */,
 			);
 			path = "Recipe Practice";
+			sourceTree = "<group>";
+		};
+		FB2CCA2E2588C7BF00B189DA /* MainPage */ = {
+			isa = PBXGroup;
+			children = (
+				FB2CCA1C2588BBC300B189DA /* MainVC.swift */,
+				FB4F32182588FCAF00EC89EF /* ContainerVC.swift */,
+			);
+			path = MainPage;
+			sourceTree = "<group>";
+		};
+		FB4F320E2588F12A00EC89EF /* Helper */ = {
+			isa = PBXGroup;
+			children = (
+				FB4F32152588F66500EC89EF /* Color.swift */,
+			);
+			path = Helper;
+			sourceTree = "<group>";
+		};
+		FB4F32132588F55E00EC89EF /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -137,9 +167,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FB2CCA1D2588BBC300B189DA /* ViewController.swift in Sources */,
+				FB2CCA1D2588BBC300B189DA /* MainVC.swift in Sources */,
+				FB4F32162588F66500EC89EF /* Color.swift in Sources */,
 				FB2CCA192588BBC300B189DA /* AppDelegate.swift in Sources */,
 				FB2CCA1B2588BBC300B189DA /* SceneDelegate.swift in Sources */,
+				FB4F32192588FCAF00EC89EF /* ContainerVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
