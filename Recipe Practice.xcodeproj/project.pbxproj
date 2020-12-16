@@ -9,25 +9,41 @@
 /* Begin PBXBuildFile section */
 		FB2CCA192588BBC300B189DA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB2CCA182588BBC300B189DA /* AppDelegate.swift */; };
 		FB2CCA1B2588BBC300B189DA /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB2CCA1A2588BBC300B189DA /* SceneDelegate.swift */; };
-		FB2CCA1D2588BBC300B189DA /* MainVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB2CCA1C2588BBC300B189DA /* MainVC.swift */; };
+		FB2CCA1D2588BBC300B189DA /* HomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB2CCA1C2588BBC300B189DA /* HomeVC.swift */; };
 		FB2CCA202588BBC300B189DA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FB2CCA1E2588BBC300B189DA /* Main.storyboard */; };
 		FB2CCA222588BBC400B189DA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FB2CCA212588BBC400B189DA /* Assets.xcassets */; };
 		FB2CCA252588BBC400B189DA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FB2CCA232588BBC400B189DA /* LaunchScreen.storyboard */; };
 		FB4F32162588F66500EC89EF /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB4F32152588F66500EC89EF /* Color.swift */; };
-		FB4F32192588FCAF00EC89EF /* ContainerVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB4F32182588FCAF00EC89EF /* ContainerVC.swift */; };
+		FB4F321C258910DF00EC89EF /* CustomTabbar.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB4F321B258910DF00EC89EF /* CustomTabbar.swift */; };
+		FB4F32292589A34400EC89EF /* LargeCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB4F32272589A34400EC89EF /* LargeCollectionViewCell.swift */; };
+		FB4F322A2589A34400EC89EF /* LargeCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FB4F32282589A34400EC89EF /* LargeCollectionViewCell.xib */; };
+		FB4F322E2589A35700EC89EF /* MediumCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB4F322C2589A35700EC89EF /* MediumCollectionViewCell.swift */; };
+		FB4F322F2589A35700EC89EF /* MediumCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FB4F322D2589A35700EC89EF /* MediumCollectionViewCell.xib */; };
+		FB4F32332589A36400EC89EF /* SmallCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB4F32312589A36400EC89EF /* SmallCollectionViewCell.swift */; };
+		FB4F32342589A36400EC89EF /* SmallCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FB4F32322589A36400EC89EF /* SmallCollectionViewCell.xib */; };
+		FB4F325C2589E98400EC89EF /* Image Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB4F325B2589E98400EC89EF /* Image Extension.swift */; };
+		FB4F325F2589F40600EC89EF /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB4F325E2589F40600EC89EF /* Model.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		FB2CCA152588BBC300B189DA /* Recipe Practice.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Recipe Practice.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		FB2CCA182588BBC300B189DA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FB2CCA1A2588BBC300B189DA /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		FB2CCA1C2588BBC300B189DA /* MainVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainVC.swift; sourceTree = "<group>"; };
+		FB2CCA1C2588BBC300B189DA /* HomeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeVC.swift; sourceTree = "<group>"; };
 		FB2CCA1F2588BBC300B189DA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		FB2CCA212588BBC400B189DA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		FB2CCA242588BBC400B189DA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		FB2CCA262588BBC400B189DA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FB4F32152588F66500EC89EF /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
-		FB4F32182588FCAF00EC89EF /* ContainerVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContainerVC.swift; sourceTree = "<group>"; };
+		FB4F321B258910DF00EC89EF /* CustomTabbar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTabbar.swift; sourceTree = "<group>"; };
+		FB4F32272589A34400EC89EF /* LargeCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LargeCollectionViewCell.swift; sourceTree = "<group>"; };
+		FB4F32282589A34400EC89EF /* LargeCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LargeCollectionViewCell.xib; sourceTree = "<group>"; };
+		FB4F322C2589A35700EC89EF /* MediumCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediumCollectionViewCell.swift; sourceTree = "<group>"; };
+		FB4F322D2589A35700EC89EF /* MediumCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MediumCollectionViewCell.xib; sourceTree = "<group>"; };
+		FB4F32312589A36400EC89EF /* SmallCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SmallCollectionViewCell.swift; sourceTree = "<group>"; };
+		FB4F32322589A36400EC89EF /* SmallCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SmallCollectionViewCell.xib; sourceTree = "<group>"; };
+		FB4F325B2589E98400EC89EF /* Image Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Image Extension.swift"; sourceTree = "<group>"; };
+		FB4F325E2589F40600EC89EF /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,30 +78,32 @@
 			children = (
 				FB4F320E2588F12A00EC89EF /* Helper */,
 				FB4F32132588F55E00EC89EF /* Model */,
-				FB2CCA2E2588C7BF00B189DA /* MainPage */,
+				FB4F32232589A29D00EC89EF /* CollectionViewCell  */,
+				FB2CCA2E2588C7BF00B189DA /* HomePage */,
 				FB2CCA182588BBC300B189DA /* AppDelegate.swift */,
 				FB2CCA1A2588BBC300B189DA /* SceneDelegate.swift */,
 				FB2CCA1E2588BBC300B189DA /* Main.storyboard */,
 				FB2CCA212588BBC400B189DA /* Assets.xcassets */,
 				FB2CCA232588BBC400B189DA /* LaunchScreen.storyboard */,
 				FB2CCA262588BBC400B189DA /* Info.plist */,
+				FB4F321E2589A14D00EC89EF /* Tabbar */,
 			);
 			path = "Recipe Practice";
 			sourceTree = "<group>";
 		};
-		FB2CCA2E2588C7BF00B189DA /* MainPage */ = {
+		FB2CCA2E2588C7BF00B189DA /* HomePage */ = {
 			isa = PBXGroup;
 			children = (
-				FB2CCA1C2588BBC300B189DA /* MainVC.swift */,
-				FB4F32182588FCAF00EC89EF /* ContainerVC.swift */,
+				FB2CCA1C2588BBC300B189DA /* HomeVC.swift */,
 			);
-			path = MainPage;
+			path = HomePage;
 			sourceTree = "<group>";
 		};
 		FB4F320E2588F12A00EC89EF /* Helper */ = {
 			isa = PBXGroup;
 			children = (
 				FB4F32152588F66500EC89EF /* Color.swift */,
+				FB4F325B2589E98400EC89EF /* Image Extension.swift */,
 			);
 			path = Helper;
 			sourceTree = "<group>";
@@ -93,8 +111,54 @@
 		FB4F32132588F55E00EC89EF /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				FB4F325E2589F40600EC89EF /* Model.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		FB4F321E2589A14D00EC89EF /* Tabbar */ = {
+			isa = PBXGroup;
+			children = (
+				FB4F321B258910DF00EC89EF /* CustomTabbar.swift */,
+			);
+			path = Tabbar;
+			sourceTree = "<group>";
+		};
+		FB4F32232589A29D00EC89EF /* CollectionViewCell  */ = {
+			isa = PBXGroup;
+			children = (
+				FB4F32242589A2C500EC89EF /* LargeCell */,
+				FB4F32252589A2DC00EC89EF /* MediumCell */,
+				FB4F32262589A2FF00EC89EF /* SmallCell */,
+			);
+			path = "CollectionViewCell ";
+			sourceTree = "<group>";
+		};
+		FB4F32242589A2C500EC89EF /* LargeCell */ = {
+			isa = PBXGroup;
+			children = (
+				FB4F32272589A34400EC89EF /* LargeCollectionViewCell.swift */,
+				FB4F32282589A34400EC89EF /* LargeCollectionViewCell.xib */,
+			);
+			path = LargeCell;
+			sourceTree = "<group>";
+		};
+		FB4F32252589A2DC00EC89EF /* MediumCell */ = {
+			isa = PBXGroup;
+			children = (
+				FB4F322C2589A35700EC89EF /* MediumCollectionViewCell.swift */,
+				FB4F322D2589A35700EC89EF /* MediumCollectionViewCell.xib */,
+			);
+			path = MediumCell;
+			sourceTree = "<group>";
+		};
+		FB4F32262589A2FF00EC89EF /* SmallCell */ = {
+			isa = PBXGroup;
+			children = (
+				FB4F32312589A36400EC89EF /* SmallCollectionViewCell.swift */,
+				FB4F32322589A36400EC89EF /* SmallCollectionViewCell.xib */,
+			);
+			path = SmallCell;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -156,6 +220,9 @@
 			files = (
 				FB2CCA252588BBC400B189DA /* LaunchScreen.storyboard in Resources */,
 				FB2CCA222588BBC400B189DA /* Assets.xcassets in Resources */,
+				FB4F322A2589A34400EC89EF /* LargeCollectionViewCell.xib in Resources */,
+				FB4F322F2589A35700EC89EF /* MediumCollectionViewCell.xib in Resources */,
+				FB4F32342589A36400EC89EF /* SmallCollectionViewCell.xib in Resources */,
 				FB2CCA202588BBC300B189DA /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -167,11 +234,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FB2CCA1D2588BBC300B189DA /* MainVC.swift in Sources */,
+				FB4F32332589A36400EC89EF /* SmallCollectionViewCell.swift in Sources */,
+				FB4F321C258910DF00EC89EF /* CustomTabbar.swift in Sources */,
+				FB2CCA1D2588BBC300B189DA /* HomeVC.swift in Sources */,
 				FB4F32162588F66500EC89EF /* Color.swift in Sources */,
 				FB2CCA192588BBC300B189DA /* AppDelegate.swift in Sources */,
+				FB4F325F2589F40600EC89EF /* Model.swift in Sources */,
+				FB4F32292589A34400EC89EF /* LargeCollectionViewCell.swift in Sources */,
+				FB4F325C2589E98400EC89EF /* Image Extension.swift in Sources */,
+				FB4F322E2589A35700EC89EF /* MediumCollectionViewCell.swift in Sources */,
 				FB2CCA1B2588BBC300B189DA /* SceneDelegate.swift in Sources */,
-				FB4F32192588FCAF00EC89EF /* ContainerVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
