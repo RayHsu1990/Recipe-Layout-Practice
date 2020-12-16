@@ -23,6 +23,8 @@
 		FB4F32342589A36400EC89EF /* SmallCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FB4F32322589A36400EC89EF /* SmallCollectionViewCell.xib */; };
 		FB4F325C2589E98400EC89EF /* Image Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB4F325B2589E98400EC89EF /* Image Extension.swift */; };
 		FB4F325F2589F40600EC89EF /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB4F325E2589F40600EC89EF /* Model.swift */; };
+		FB4F3272258A08BB00EC89EF /* LargCollectionViewCellVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB4F3270258A08BB00EC89EF /* LargCollectionViewCellVC.swift */; };
+		FB4F3273258A08BB00EC89EF /* LargCollectionViewCellVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = FB4F3271258A08BB00EC89EF /* LargCollectionViewCellVC.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -44,6 +46,8 @@
 		FB4F32322589A36400EC89EF /* SmallCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SmallCollectionViewCell.xib; sourceTree = "<group>"; };
 		FB4F325B2589E98400EC89EF /* Image Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Image Extension.swift"; sourceTree = "<group>"; };
 		FB4F325E2589F40600EC89EF /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
+		FB4F3270258A08BB00EC89EF /* LargCollectionViewCellVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LargCollectionViewCellVC.swift; sourceTree = "<group>"; };
+		FB4F3271258A08BB00EC89EF /* LargCollectionViewCellVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LargCollectionViewCellVC.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -127,20 +131,21 @@
 		FB4F32232589A29D00EC89EF /* CollectionViewCell  */ = {
 			isa = PBXGroup;
 			children = (
-				FB4F32242589A2C500EC89EF /* LargeCell */,
+				FB4F32242589A2C500EC89EF /* LargeCellWithCollectionView */,
 				FB4F32252589A2DC00EC89EF /* MediumCell */,
 				FB4F32262589A2FF00EC89EF /* SmallCell */,
 			);
 			path = "CollectionViewCell ";
 			sourceTree = "<group>";
 		};
-		FB4F32242589A2C500EC89EF /* LargeCell */ = {
+		FB4F32242589A2C500EC89EF /* LargeCellWithCollectionView */ = {
 			isa = PBXGroup;
 			children = (
-				FB4F32272589A34400EC89EF /* LargeCollectionViewCell.swift */,
-				FB4F32282589A34400EC89EF /* LargeCollectionViewCell.xib */,
+				FB4F3270258A08BB00EC89EF /* LargCollectionViewCellVC.swift */,
+				FB4F3271258A08BB00EC89EF /* LargCollectionViewCellVC.xib */,
+				FB4F3265258A076200EC89EF /* cell */,
 			);
-			path = LargeCell;
+			path = LargeCellWithCollectionView;
 			sourceTree = "<group>";
 		};
 		FB4F32252589A2DC00EC89EF /* MediumCell */ = {
@@ -159,6 +164,15 @@
 				FB4F32322589A36400EC89EF /* SmallCollectionViewCell.xib */,
 			);
 			path = SmallCell;
+			sourceTree = "<group>";
+		};
+		FB4F3265258A076200EC89EF /* cell */ = {
+			isa = PBXGroup;
+			children = (
+				FB4F32272589A34400EC89EF /* LargeCollectionViewCell.swift */,
+				FB4F32282589A34400EC89EF /* LargeCollectionViewCell.xib */,
+			);
+			path = cell;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -222,6 +236,7 @@
 				FB2CCA222588BBC400B189DA /* Assets.xcassets in Resources */,
 				FB4F322A2589A34400EC89EF /* LargeCollectionViewCell.xib in Resources */,
 				FB4F322F2589A35700EC89EF /* MediumCollectionViewCell.xib in Resources */,
+				FB4F3273258A08BB00EC89EF /* LargCollectionViewCellVC.xib in Resources */,
 				FB4F32342589A36400EC89EF /* SmallCollectionViewCell.xib in Resources */,
 				FB2CCA202588BBC300B189DA /* Main.storyboard in Resources */,
 			);
@@ -240,6 +255,7 @@
 				FB4F32162588F66500EC89EF /* Color.swift in Sources */,
 				FB2CCA192588BBC300B189DA /* AppDelegate.swift in Sources */,
 				FB4F325F2589F40600EC89EF /* Model.swift in Sources */,
+				FB4F3272258A08BB00EC89EF /* LargCollectionViewCellVC.swift in Sources */,
 				FB4F32292589A34400EC89EF /* LargeCollectionViewCell.swift in Sources */,
 				FB4F325C2589E98400EC89EF /* Image Extension.swift in Sources */,
 				FB4F322E2589A35700EC89EF /* MediumCollectionViewCell.swift in Sources */,

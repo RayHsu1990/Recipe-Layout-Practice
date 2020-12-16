@@ -26,9 +26,7 @@ class HomeVC: UIViewController {
     private func collectionSetting(){
         collectionView.delegate = self
         collectionView.dataSource = self
-        collectionView.register(LargeCollectionViewCell.nib(), forCellWithReuseIdentifier: LargeCollectionViewCell.id)
-        collectionView.register(MediumCollectionViewCell.nib(), forCellWithReuseIdentifier: MediumCollectionViewCell.id)
-        collectionView.register(SmallCollectionViewCell.nib(), forCellWithReuseIdentifier: SmallCollectionViewCell.id)
+        collectionView.register(LargCollectionViewCellVC.nib(), forCellWithReuseIdentifier: LargCollectionViewCellVC.id)
     }
     
     
@@ -37,21 +35,38 @@ extension HomeVC : UICollectionViewDelegate{
     
 }
 extension HomeVC : UICollectionViewDelegateFlowLayout {
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        
+        guard let section = MainPageContentStyle(rawValue: indexPath.section) else { return CGSize() }
+        switch section {
+        
+        case .largeContent:
+            return CGSize(width: view.frame.width, height: 228)
+        case .smallContent:
+            return CGSize()
+        case .mediumContent:
+            return CGSize()
+        case .recipeWithRate:
+            return CGSize()
+        }
+    }
+    
 }
 
 extension HomeVC : UICollectionViewDataSource {
     
-    func numberOfSections(in collectionView: UICollectionView) -> Int {
-        4
-    }
+    
+//    func numberOfSections(in collectionView: UICollectionView) -> Int {
+//        2
+//    }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         
         guard let section = MainPageContentStyle(rawValue: section) else { return 0 }
-        
+
         switch section {
         case .largeContent:
-            return largeContents.count
+            return 1
         case .smallContent:
             return 0
         case .mediumContent:
@@ -69,11 +84,14 @@ extension HomeVC : UICollectionViewDataSource {
         
         switch section {
         case .largeContent:
-            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: LargeCollectionViewCell.id, for: indexPath) as! LargeCollectionViewCell
-            cell.configure(largeContents[indexPath.row])
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: LargCollectionViewCellVC.id, for: indexPath) as! LargCollectionViewCellVC
+            cell.configure(content: largeContents)
             return cell
+            
         case .smallContent:
-            return UICollectionViewCell()
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: LargCollectionViewCellVC.id, for: indexPath) as! LargCollectionViewCellVC
+            cell.configure(content: largeContents)
+            return cell
         case .mediumContent:
             return UICollectionViewCell()
         case .recipeWithRate:
