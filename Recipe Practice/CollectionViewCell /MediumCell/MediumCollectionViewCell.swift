@@ -9,49 +9,40 @@ import UIKit
 
 
 
-struct Content {
-    let contentImage: UIImage
-    let type: String?
-    let title: String?
-    
-    init(style:ContentStyle) {
-        
-        switch style {
-        case .large(let image, let title, let type):
-            self.contentImage = image
-            self.type = type.rawValue
-            self.title = title
-        case .medium(let image, let title):
-            self.contentImage = image
-            self.type = nil
-            self.title = title
-
-        case .small(let image, let type):
-            self.contentImage = image
-            self.type = type.rawValue
-            self.title = nil
-
-        }
-    }
-}
-enum ContentStyle {
-    case large(_ image:UIImage, _ title:String, _ type: FoodType)
-    case medium(_ image: UIImage, _ title: String)
-    case small(_ image: UIImage, _ type: FoodType)
-}
-
-
 class MediumCollectionViewCell: UICollectionViewCell {
     static let id = "MediumCollectionViewCell"
     static func nib() -> UINib { UINib(nibName: "MediumCollectionViewCell", bundle: nil) }
-
+    
+    @IBOutlet weak var contentImage : UIImageView!
+    @IBOutlet weak var titleLabel : UILabel!
+    @IBOutlet weak var composeBtn : UIButton!
+    
+    var delegate : PagingDelegate?
+    
+    
     override func awakeFromNib() {
         super.awakeFromNib()
+        layer.cornerRadius = 10
+        backgroundColor = Color.mainOrange
+        composeBtn.layer.cornerRadius = composeBtn.frame.height / 2
+        composeBtn.setTitle("Compose meal!", for: .normal)
+        composeBtn.layer.borderWidth = 2
+        composeBtn.layer.borderColor = CGColor(red: 1,
+                                               green: 1,
+                                               blue: 1,
+                                               alpha: 0.8)
         
     }
     
-    public func configure(){
+    public func configure(model: Content){
+        contentImage.image = model.contentImage
+        titleLabel.text = model.title
         
+    }
+    @IBAction func coppseBtnTapped(_ sender : UIButton) {
+        let vc = ComposeMealVC()
+        delegate?.changePage(vc: vc)
     }
 
 }
+

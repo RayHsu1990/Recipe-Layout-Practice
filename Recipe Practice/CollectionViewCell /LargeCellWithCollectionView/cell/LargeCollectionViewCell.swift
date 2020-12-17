@@ -8,14 +8,19 @@
 import UIKit
 
 enum FoodType: String {
-    case soup , noodle , rice , veg , meat
-}
-
-struct LargeCellContent {
-    let contentImage : UIImage
-    let title : String
-    let type : FoodType
+    case soup , vege , maindishes , cakes , fastFood , kids
     
+    var capitalTitle: String {
+        switch self{
+        case .soup: return "Soup"
+        case .vege: return "Vege"
+        case .maindishes: return "Main dishes"
+        case .cakes: return "Cakes"
+        case .fastFood: return "Fast food"
+        case .kids: return "Kid's menu"
+            
+        }
+    }
 }
 
 class LargeCollectionViewCell: UICollectionViewCell {

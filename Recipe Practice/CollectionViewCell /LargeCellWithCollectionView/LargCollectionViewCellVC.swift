@@ -21,8 +21,8 @@ class LargCollectionViewCellVC: UICollectionViewCell {
         collectionView.register(LargeCollectionViewCell.nib(), forCellWithReuseIdentifier: LargeCollectionViewCell.id)
         
     }
-    public func configure (content: [Content]) {
-        self.contents = content
+    public func configure (contents: [Content]) {
+        self.contents = contents
     }
 
 }

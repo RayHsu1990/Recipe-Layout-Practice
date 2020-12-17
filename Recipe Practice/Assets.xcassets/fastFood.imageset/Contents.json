@@ -1,19 +1,19 @@
 {
   "images" : [
     {
+      "filename" : "fastFood.png",
       "idiom" : "universal",
-      "filename" : "ico3.png",
       "scale" : "1x"
     },
     {
       "scale" : "2x",
-      "filename" : "ico3@2x.png",
-      "idiom" : "universal"
+      "idiom" : "universal",
+      "filename" : "fastFood@2x.png"
     },
     {
-      "filename" : "ico3@3x.png",
-      "scale" : "3x",
-      "idiom" : "universal"
+      "idiom" : "universal",
+      "filename" : "fastFood@3x.png",
+      "scale" : "3x"
     }
   ],
   "info" : {

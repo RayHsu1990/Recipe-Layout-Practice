@@ -13,3 +13,10 @@ struct Color {
     ///light orange rgb 255 244 228
     static let lightOrange : UIColor = #colorLiteral(red: 1, green: 0.9568627451, blue: 0.8941176471, alpha: 1)
 }
+
+extension UIColor {
+    
+//    func gradulColor(color1:UIColor, color2:UIColor)-> UIColor{
+//
+//    }
+}
