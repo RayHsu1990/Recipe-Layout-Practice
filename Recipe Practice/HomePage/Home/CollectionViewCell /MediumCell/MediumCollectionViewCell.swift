@@ -9,9 +9,7 @@ import UIKit
 
 
 
-class MediumCollectionViewCell: UICollectionViewCell {
-    static let id = "MediumCollectionViewCell"
-    static func nib() -> UINib { UINib(nibName: "MediumCollectionViewCell", bundle: nil) }
+class MediumCollectionViewCell: UICollectionViewCell, Reusable {
     
     @IBOutlet weak var contentImage : UIImageView!
     @IBOutlet weak var titleLabel : UILabel!

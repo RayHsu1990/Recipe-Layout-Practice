@@ -7,10 +7,8 @@
 
 import UIKit
 
-class SmallCollectionViewCell: UICollectionViewCell {
+class SmallCollectionViewCell: UICollectionViewCell, Reusable {
     
-    static let id = "SmallCollectionViewCell"
-    static func nib() -> UINib { UINib(nibName: "SmallCollectionViewCell", bundle: nil) }
     
     @IBOutlet weak var collectionView: UICollectionView!
     

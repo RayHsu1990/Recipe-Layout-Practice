@@ -7,15 +7,14 @@
 
 import UIKit
 
-class LargCollectionViewCellVC: UICollectionViewCell {
-    static let id = "LargCollectionViewCellVC"
-    static func nib () -> UINib { UINib(nibName: "LargCollectionViewCellVC", bundle: nil)}
+class LargCollectionViewCellVC: UICollectionViewCell, Reusable {
     
     @IBOutlet weak var collectionView : UICollectionView!
     var contents : [Content] = []
     
     override func awakeFromNib() {
         super.awakeFromNib()
+        collectionView.largeContentTitle = "hello "
         collectionView.delegate = self
         collectionView.dataSource = self
         collectionView.register(LargeCollectionViewCell.nib(), forCellWithReuseIdentifier: LargeCollectionViewCell.id)
