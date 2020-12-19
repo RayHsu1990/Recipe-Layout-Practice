@@ -58,12 +58,12 @@ class ViewForComposeVC: UIView {
         
         let layout = UICollectionViewFlowLayout()
         layout.itemSize = CGSize(width: 82,
-                                 height: 120)
-//        layout.sectionInset = UIEdgeInsets(top: 0,
-//                                           left: 0,
-//                                           bottom: 0,
-//                                           right: 0)
-//        layout.minimumLineSpacing = 10
+                                 height: 150)
+        layout.sectionInset = UIEdgeInsets(top: 0,
+                                           left: 20,
+                                           bottom: 0,
+                                           right: 0)
+        layout.minimumLineSpacing = 20
         layout.scrollDirection = UICollectionView.ScrollDirection.horizontal
 
         let collectionView = UICollectionView(frame: .zero,

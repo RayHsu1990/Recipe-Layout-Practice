@@ -14,9 +14,13 @@ class ComposeMealVC: UIViewController {
     //tableview model
     private var ingredients: [Ingredient] = Ingredient.getIngredients()
     
+    private var searchedIngredient: [Ingredient] = Ingredient.getSearchedIngrents()
+    
+    
+    
     //MARK:- LifeCycle
     
-    override func loadView() {
+        override func loadView() {
         super.loadView()
         self.view = baseView
     }
@@ -89,12 +93,12 @@ extension ComposeMealVC : UITextFieldDelegate {
 
 extension ComposeMealVC : UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        2
+        searchedIngredient.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = baseView.collectionView.dequeueReusableCell(withReuseIdentifier: IngredientCollectionViewCell.id, for: indexPath)
-        cell.backgroundColor = .blue
+        let cell = baseView.collectionView.dequeueReusableCell(withReuseIdentifier: IngredientCollectionViewCell.id, for: indexPath) as! IngredientCollectionViewCell
+        cell.configurr(searchedIngredient[indexPath.item])
         return cell
     }
     
