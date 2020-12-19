@@ -9,9 +9,12 @@ import UIKit
 
 class ComposeMealVC: UIViewController {
     
-    private lazy var baseView : ViewForComposeVC = {
-        ViewForComposeVC()
-    }()
+    private var baseView = ViewForComposeVC()
+    
+    //tableview model
+    private var ingredients: [Ingredient] = Ingredient.getIngredients()
+    
+    //MARK:- LifeCycle
     
     override func loadView() {
         super.loadView()
@@ -25,7 +28,7 @@ class ComposeMealVC: UIViewController {
                                           action: #selector(searchBtnTapped),
                                           for: .touchUpInside)
         baseView.scanView.btn.addTarget(self,
-                                        action: #selector(searchBtnTapped),
+                                        action: #selector(scanBtnTapped),
                                         for: .touchUpInside)
         baseView.collectionView.delegate = self
         baseView.collectionView.dataSource = self
@@ -35,7 +38,7 @@ class ComposeMealVC: UIViewController {
         
     }
     
-    
+    //MARK:- func
     @objc func searchBtnTapped (_ sender: UIButton){
         baseView.stackView.subviews.last?.isHidden.toggle()
         baseView.tableView.isHidden.toggle()
@@ -43,30 +46,40 @@ class ComposeMealVC: UIViewController {
 
         UIViewPropertyAnimator(duration: 0.3, curve: .linear) {
             self.baseView.layoutIfNeeded()
+            self.baseView.checklistBtn.isHidden.toggle()
         }.startAnimation()
 
+    }
+    
+    @objc func scanBtnTapped(_ sender: UIButton){
+        
     }
 
     
 
     
 }
-
+//MARK:- Tableview Delegate + DataSource
 extension ComposeMealVC : UITableViewDelegate{
-    
 }
 
 extension ComposeMealVC : UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        0
+        ingredients.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        UITableViewCell()
+        let cell = tableView.dequeueReusableCell(withIdentifier: IngredientsTableViewCell.id, for: indexPath) as! IngredientsTableViewCell
+        
+        cell.configure(ingredients[indexPath.row])
+        return cell
     }
     
     
 }
+
+//MARK:- Collectionview Delegate + DataSource
+
 
 extension ComposeMealVC : UITextFieldDelegate {
     func textFieldDidBeginEditing(_ textField: UITextField) {
@@ -74,9 +87,6 @@ extension ComposeMealVC : UITextFieldDelegate {
 }
 
 
-extension ComposeMealVC : UICollectionViewDelegate {
-    
-}
 extension ComposeMealVC : UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         2
@@ -90,6 +100,8 @@ extension ComposeMealVC : UICollectionViewDataSource {
     
     
 }
+
+//MARK:- Textfield Delegate
 extension ComposeMealVC : UICollectionViewDelegateFlowLayout {
 }
 

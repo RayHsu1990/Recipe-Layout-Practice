@@ -34,6 +34,7 @@
 		FB6E53FD258CD9A700E6FAA4 /* IngredientsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FB6E53FB258CD9A700E6FAA4 /* IngredientsTableViewCell.xib */; };
 		FB6E5400258CD9CE00E6FAA4 /* Reusable.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB6E53FF258CD9CE00E6FAA4 /* Reusable.swift */; };
 		FB6E540B258CDF7900E6FAA4 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB6E540A258CDF7900E6FAA4 /* Model.swift */; };
+		FBE25182258DEB4200F7C63C /* Button Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBE25181258DEB4200F7C63C /* Button Extension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -66,6 +67,7 @@
 		FB6E53FB258CD9A700E6FAA4 /* IngredientsTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = IngredientsTableViewCell.xib; sourceTree = "<group>"; };
 		FB6E53FF258CD9CE00E6FAA4 /* Reusable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reusable.swift; sourceTree = "<group>"; };
 		FB6E540A258CDF7900E6FAA4 /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
+		FBE25181258DEB4200F7C63C /* Button Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Button Extension.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -92,9 +94,10 @@
 			isa = PBXGroup;
 			children = (
 				FB6E5408258CDF6600E6FAA4 /* Model */,
-				FB6E53F9258CD95700E6FAA4 /* TableViewCell */,
 				FB27B153258B792300766BBA /* ComposeMealVC.swift */,
 				FB27B160258C9D2F00766BBA /* ViewForComposeVC.swift */,
+				FBE2517F258DAF4B00F7C63C /* CollectionViewCell */,
+				FB6E53F9258CD95700E6FAA4 /* TableViewCell */,
 			);
 			path = "Home-compose";
 			sourceTree = "<group>";
@@ -146,6 +149,7 @@
 				FB4F32152588F66500EC89EF /* Color.swift */,
 				FB4F325B2589E98400EC89EF /* Image Extension.swift */,
 				FB6E53FF258CD9CE00E6FAA4 /* Reusable.swift */,
+				FBE25181258DEB4200F7C63C /* Button Extension.swift */,
 			);
 			path = Helper;
 			sourceTree = "<group>";
@@ -266,6 +270,13 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
+		FBE2517F258DAF4B00F7C63C /* CollectionViewCell */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = CollectionViewCell;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -344,6 +355,7 @@
 			files = (
 				FB27B161258C9D2F00766BBA /* ViewForComposeVC.swift in Sources */,
 				FB4F32332589A36400EC89EF /* SmallCollectionViewCell.swift in Sources */,
+				FBE25182258DEB4200F7C63C /* Button Extension.swift in Sources */,
 				FB4F321C258910DF00EC89EF /* CustomTabbar.swift in Sources */,
 				FB2CCA1D2588BBC300B189DA /* HomeVC.swift in Sources */,
 				FB4F32162588F66500EC89EF /* Color.swift in Sources */,

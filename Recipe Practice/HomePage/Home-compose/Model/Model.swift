@@ -12,3 +12,19 @@ struct Ingredient{
     let ingredienttitle : String
     
 }
+
+extension Ingredient{
+    
+    static func getIngredients()-> [Ingredient]{
+        
+        return[
+            Ingredient(ingredientImage: UIImage(named: "tomato") ?? UIImage(systemName: "photo")!, ingredienttitle: "Tomato"),
+            
+            Ingredient(ingredientImage: UIImage(named: "tomatosauce") ?? UIImage(systemName: "photo")!, ingredienttitle: "Tomato sauce"),
+            
+            Ingredient(ingredientImage: UIImage(named: "tomatojuice") ?? UIImage(systemName: "photo")!, ingredienttitle: "Tomato juice"),
+
+        ]
+        
+    }
+}
