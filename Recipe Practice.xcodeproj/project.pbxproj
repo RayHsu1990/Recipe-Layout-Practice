@@ -35,6 +35,8 @@
 		FB6E5400258CD9CE00E6FAA4 /* Reusable.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB6E53FF258CD9CE00E6FAA4 /* Reusable.swift */; };
 		FB6E540B258CDF7900E6FAA4 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB6E540A258CDF7900E6FAA4 /* Model.swift */; };
 		FBE25182258DEB4200F7C63C /* Button Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBE25181258DEB4200F7C63C /* Button Extension.swift */; };
+		FBE25188258DEEC700F7C63C /* IngredientCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBE25186258DEEC700F7C63C /* IngredientCollectionViewCell.swift */; };
+		FBE25189258DEEC700F7C63C /* IngredientCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FBE25187258DEEC700F7C63C /* IngredientCollectionViewCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -68,6 +70,8 @@
 		FB6E53FF258CD9CE00E6FAA4 /* Reusable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reusable.swift; sourceTree = "<group>"; };
 		FB6E540A258CDF7900E6FAA4 /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
 		FBE25181258DEB4200F7C63C /* Button Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Button Extension.swift"; sourceTree = "<group>"; };
+		FBE25186258DEEC700F7C63C /* IngredientCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IngredientCollectionViewCell.swift; sourceTree = "<group>"; };
+		FBE25187258DEEC700F7C63C /* IngredientCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = IngredientCollectionViewCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -273,6 +277,8 @@
 		FBE2517F258DAF4B00F7C63C /* CollectionViewCell */ = {
 			isa = PBXGroup;
 			children = (
+				FBE25186258DEEC700F7C63C /* IngredientCollectionViewCell.swift */,
+				FBE25187258DEEC700F7C63C /* IngredientCollectionViewCell.xib */,
 			);
 			path = CollectionViewCell;
 			sourceTree = "<group>";
@@ -342,6 +348,7 @@
 				FB4F3273258A08BB00EC89EF /* LargCollectionViewCellVC.xib in Resources */,
 				FB4F32342589A36400EC89EF /* SmallCollectionViewCell.xib in Resources */,
 				FB2CCA202588BBC300B189DA /* Main.storyboard in Resources */,
+				FBE25189258DEEC700F7C63C /* IngredientCollectionViewCell.xib in Resources */,
 				FB5EE997258B064F0086B383 /* SmallCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -358,6 +365,7 @@
 				FBE25182258DEB4200F7C63C /* Button Extension.swift in Sources */,
 				FB4F321C258910DF00EC89EF /* CustomTabbar.swift in Sources */,
 				FB2CCA1D2588BBC300B189DA /* HomeVC.swift in Sources */,
+				FBE25188258DEEC700F7C63C /* IngredientCollectionViewCell.swift in Sources */,
 				FB4F32162588F66500EC89EF /* Color.swift in Sources */,
 				FB2CCA192588BBC300B189DA /* AppDelegate.swift in Sources */,
 				FB27B157258B7E5C00766BBA /* CustomViewFactory.swift in Sources */,

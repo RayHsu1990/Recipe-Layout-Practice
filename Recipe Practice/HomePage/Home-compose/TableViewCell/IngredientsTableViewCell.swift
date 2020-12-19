@@ -17,7 +17,7 @@ class IngredientsTableViewCell: UITableViewCell , Reusable{
     override func awakeFromNib() {
         super.awakeFromNib()
         addBtn.setTitle("", for: .normal)
-        addBtn.setTitle("    Added to list    ", for: .selected)
+        addBtn.setTitle("   Added to list  ", for: .selected)
         addBtn.setImage(UIImage(named: "add"), for: .normal)
         addBtn.setImage(UIImage(), for: .selected)
         addBtn.tintColor = #colorLiteral(red: 0.7176470588, green: 0.7176470588, blue: 0.7176470588, alpha: 1)
@@ -25,7 +25,6 @@ class IngredientsTableViewCell: UITableViewCell , Reusable{
         addBtn.setBackgroundColor(color: Color.lightOrange, forState: .selected)
         addBtn.setBackgroundColor(color: Color.tfBackgroundColor, forState: .normal)
         addBtn.layer.cornerRadius = addBtn.frame.height * 0.25
-
 
     }
 

@@ -59,18 +59,18 @@ class ViewForComposeVC: UIView {
         let layout = UICollectionViewFlowLayout()
         layout.itemSize = CGSize(width: 82,
                                  height: 120)
-        layout.sectionInset = UIEdgeInsets(top: 0,
-                                           left: 0,
-                                           bottom: 0,
-                                           right: 0)
-        layout.minimumLineSpacing = 10
+//        layout.sectionInset = UIEdgeInsets(top: 0,
+//                                           left: 0,
+//                                           bottom: 0,
+//                                           right: 0)
+//        layout.minimumLineSpacing = 10
         layout.scrollDirection = UICollectionView.ScrollDirection.horizontal
 
         let collectionView = UICollectionView(frame: .zero,
                                               collectionViewLayout: layout)
         collectionView.backgroundColor = .green
-        collectionView.register(UICollectionViewCell.self,
-                                forCellWithReuseIdentifier: "cell")
+        collectionView.register(IngredientCollectionViewCell.nib(),
+                                forCellWithReuseIdentifier: IngredientCollectionViewCell.id)
         
         return collectionView
     }()

@@ -93,7 +93,7 @@ extension ComposeMealVC : UICollectionViewDataSource {
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = baseView.collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath)
+        let cell = baseView.collectionView.dequeueReusableCell(withReuseIdentifier: IngredientCollectionViewCell.id, for: indexPath)
         cell.backgroundColor = .blue
         return cell
     }
