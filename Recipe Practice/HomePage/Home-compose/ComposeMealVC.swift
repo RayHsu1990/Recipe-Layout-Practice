@@ -9,7 +9,7 @@ import UIKit
 
 class ComposeMealVC: UIViewController {
     
-    private var baseView = ViewForComposeVC()
+    private var baseView : ViewForComposeVC!
     
     //tableview model
     private var ingredients: [Ingredient] = Ingredient.getIngredients()
@@ -20,9 +20,10 @@ class ComposeMealVC: UIViewController {
     
     //MARK:- LifeCycle
     
-        override func loadView() {
+    override func loadView() {
         super.loadView()
-        self.view = baseView
+        baseView = ViewForComposeVC(self)
+        view = baseView
     }
     
     override func viewDidLoad() {
@@ -34,11 +35,6 @@ class ComposeMealVC: UIViewController {
         baseView.scanView.btn.addTarget(self,
                                         action: #selector(scanBtnTapped),
                                         for: .touchUpInside)
-        baseView.collectionView.delegate = self
-        baseView.collectionView.dataSource = self
-        baseView.tableView.delegate = self
-        baseView.tableView.dataSource = self
-        baseView.searchView.serchTextfield.delegate = self
         
         navigationItem.rightBarButtonItem = UIBarButtonItem(customView: baseView.countView )
 

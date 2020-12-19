@@ -10,9 +10,12 @@ import UIKit
 
 class ViewForComposeVC: UIView {
     
+    weak var controller : ComposeMealVC?
+    
     //MARK:- init()
-    init(){
+    init(_ vc: ComposeMealVC){
         super.init(frame: .zero)
+        self.controller = vc
         self.backgroundColor = .systemBackground
         setTitleLabel()
         setStackView()
@@ -20,6 +23,7 @@ class ViewForComposeVC: UIView {
         setTableView()
         setCollectionView()
         setCheckBtn()
+        searchView.serchTextfield.delegate = controller
     }
     
     required init?(coder: NSCoder) {
@@ -39,6 +43,9 @@ class ViewForComposeVC: UIView {
         tableView.tableHeaderView = headerView
         tableView.register(IngredientsTableViewCell.nib(),
                            forCellReuseIdentifier: IngredientsTableViewCell.id)
+        tableView.delegate = controller
+        tableView.dataSource = controller
+
         return tableView
     }()
     //MARK: collectionview
@@ -67,7 +74,9 @@ class ViewForComposeVC: UIView {
         
         collectionView.register(IngredientCollectionViewCell.nib(),
                                 forCellWithReuseIdentifier: IngredientCollectionViewCell.id)
-        
+        collectionView.delegate = controller
+        collectionView.dataSource = controller
+
         return collectionView
     }()
     
@@ -133,6 +142,7 @@ class ViewForComposeVC: UIView {
         view.layer.cornerRadius = 8
         view.addSubview(countLabel)
         view.isHidden = true
+        
         
         return view
     }()
@@ -208,22 +218,4 @@ class ViewForComposeVC: UIView {
 
 }
 
-//MARK:- collectionview header
 
-class ReuseCollectionViewHeader : UICollectionReusableView, Reusable {
-    
-    func configure(){
-        let label = UILabel(frame: CGRect(x: 20,
-                                          y: 0,
-                                          width: 200,
-                                          height: 40))
-        label.textAlignment = .left
-        label.text = "Last search"
-        label.font = UIFont.systemFont(ofSize: 14, weight: .semibold)
-        label.textColor = .black
-
-        self.addSubview(label)
-
-    }
-    
-}
