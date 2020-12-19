@@ -43,6 +43,34 @@ class ViewForComposeVC: UIView {
     }()
     //MARK: collectionview
     
+    lazy var collectionView : UICollectionView = {
+        
+        let layout = UICollectionViewFlowLayout()
+        layout.itemSize = CGSize(width: 82,
+                                 height: 160)
+        layout.sectionInset = UIEdgeInsets(top: 10,
+                                           left: 20,
+                                           bottom: 0,
+                                           right: 0)
+        layout.minimumLineSpacing = 20
+        layout.scrollDirection = UICollectionView.ScrollDirection.horizontal
+
+        let collectionView = UICollectionView(frame: .zero,
+                                              collectionViewLayout: layout)
+        collectionView.backgroundColor = .systemBackground
+        collectionView.showsHorizontalScrollIndicator = false
+        collectionView.register(ReuseCollectionViewHeader.self,
+                                  forSupplementaryViewOfKind:
+                                    UICollectionView.elementKindSectionHeader,
+                                  withReuseIdentifier: ReuseCollectionViewHeader.id)
+
+        
+        collectionView.register(IngredientCollectionViewCell.nib(),
+                                forCellWithReuseIdentifier: IngredientCollectionViewCell.id)
+        
+        return collectionView
+    }()
+    
     lazy var headerView: UIView = {
         let view = UIView(frame: CGRect(x: 0, y: 0, width: 200, height: 40))
         let label = UILabel()
@@ -52,27 +80,6 @@ class ViewForComposeVC: UIView {
         view.addSubview(label)
         
         return view
-    }()
-
-    lazy var collectionView : UICollectionView = {
-        
-        let layout = UICollectionViewFlowLayout()
-        layout.itemSize = CGSize(width: 82,
-                                 height: 150)
-        layout.sectionInset = UIEdgeInsets(top: 0,
-                                           left: 20,
-                                           bottom: 0,
-                                           right: 0)
-        layout.minimumLineSpacing = 20
-        layout.scrollDirection = UICollectionView.ScrollDirection.horizontal
-
-        let collectionView = UICollectionView(frame: .zero,
-                                              collectionViewLayout: layout)
-        collectionView.backgroundColor = .green
-        collectionView.register(IngredientCollectionViewCell.nib(),
-                                forCellWithReuseIdentifier: IngredientCollectionViewCell.id)
-        
-        return collectionView
     }()
     
     ///stackView (searchview + scanview)
@@ -94,10 +101,6 @@ class ViewForComposeVC: UIView {
         return label
     }()
     
-    ///searchView with textfield
-    var searchView = CustomViewFactory.buildTextFieldView()
-    
-
     lazy var scanView = CustomViewFactory.buildButtonView(
         buttonStyle: .btnWithLeftIcon(UIImage(named: "barcode")!),
         title: "Scan EAN code",
@@ -116,7 +119,25 @@ class ViewForComposeVC: UIView {
         backgroundColor: Color.mainOrange,
         textColor: .systemBackground)
     
+    ///searchView with textfield
+    var searchView = CustomViewFactory.buildTextFieldView()
+
+    lazy var countView: UIView = {
+        let view = UIView(frame: CGRect(x: 0, y: 0, width: 32, height: 32))
+        let countLabel = UILabel(frame: view.frame)
+        countLabel.text = "0"
+        countLabel.font = UIFont.systemFont(ofSize: 14, weight: .bold)
+        countLabel.textAlignment = .center
+        countLabel.textColor = Color.mainOrange
+        view.backgroundColor = Color.lightOrange
+        view.layer.cornerRadius = 8
+        view.addSubview(countLabel)
+        view.isHidden = true
+        
+        return view
+    }()
     
+
     
     //MARK:- Properties setting function
     func setCollectionView(){
@@ -185,4 +206,24 @@ class ViewForComposeVC: UIView {
 
     }
 
+}
+
+//MARK:- collectionview header
+
+class ReuseCollectionViewHeader : UICollectionReusableView, Reusable {
+    
+    func configure(){
+        let label = UILabel(frame: CGRect(x: 20,
+                                          y: 0,
+                                          width: 200,
+                                          height: 40))
+        label.textAlignment = .left
+        label.text = "Last search"
+        label.font = UIFont.systemFont(ofSize: 14, weight: .semibold)
+        label.textColor = .black
+
+        self.addSubview(label)
+
+    }
+    
 }

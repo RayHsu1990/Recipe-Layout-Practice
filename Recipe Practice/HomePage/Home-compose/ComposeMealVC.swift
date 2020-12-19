@@ -40,6 +40,10 @@ class ComposeMealVC: UIViewController {
         baseView.tableView.dataSource = self
         baseView.searchView.serchTextfield.delegate = self
         
+        navigationItem.rightBarButtonItem = UIBarButtonItem(customView: baseView.countView )
+
+
+        
     }
     
     //MARK:- func
@@ -47,7 +51,8 @@ class ComposeMealVC: UIViewController {
         baseView.stackView.subviews.last?.isHidden.toggle()
         baseView.tableView.isHidden.toggle()
         baseView.collectionView.isHidden.toggle()
-
+        baseView.countView.isHidden.toggle()
+        
         UIViewPropertyAnimator(duration: 0.3, curve: .linear) {
             self.baseView.layoutIfNeeded()
             self.baseView.checklistBtn.isHidden.toggle()
@@ -92,6 +97,22 @@ extension ComposeMealVC : UITextFieldDelegate {
 
 
 extension ComposeMealVC : UICollectionViewDataSource {
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> CGSize {
+        CGSize(width: 1, height: 0)
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
+        let reusableHeader = collectionView.dequeueReusableSupplementaryView(
+            ofKind: UICollectionView.elementKindSectionHeader
+            , withReuseIdentifier: ReuseCollectionViewHeader.id
+            , for: indexPath) as! ReuseCollectionViewHeader
+        reusableHeader.configure()
+        
+        return reusableHeader
+        
+    }
+    
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         searchedIngredient.count
     }
