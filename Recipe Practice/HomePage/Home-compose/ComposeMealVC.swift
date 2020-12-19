@@ -41,7 +41,7 @@ class ComposeMealVC: UIViewController {
         baseView.tableView.isHidden.toggle()
         baseView.collectionView.isHidden.toggle()
 
-        UIViewPropertyAnimator(duration: 0.2, curve: .easeInOut) {
+        UIViewPropertyAnimator(duration: 0.3, curve: .linear) {
             self.baseView.layoutIfNeeded()
         }.startAnimation()
 
