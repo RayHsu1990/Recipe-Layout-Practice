@@ -11,6 +11,8 @@ struct Ingredient{
     let ingredientImage : UIImage
     let ingredienttitle : String
     
+    var isSelected: Bool = false
+    
 }
 
 extension Ingredient{

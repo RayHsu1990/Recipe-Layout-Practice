@@ -14,35 +14,67 @@ class ComposeMealVC: UIViewController {
     //tableview model
     private var ingredients: [Ingredient] = Ingredient.getIngredients()
     
+    //collectionview model
     private var searchedIngredient: [Ingredient] = Ingredient.getSearchedIngrents()
     
+//    var chosenIngredients: [Ingredient] = []{
+//        didSet{
+//            baseView.countView.btn.setTitle("\(chosenIngredients.count)", for: .normal)
+//        }
+//    }
     
+    var chosenIngredients: [Ingredient] {
+        ingredients.filter({$0.isSelected})
+    }
+
     
     //MARK:- LifeCycle
     
     override func loadView() {
         super.loadView()
-        baseView = ViewForComposeVC(self)
+        baseView = ViewForComposeVC()
         view = baseView
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         navigationItem.title = "COMPOSE YOUR MEAL"
+        navigationItem.backButtonTitle = ""
+        navigationItem.rightBarButtonItem = UIBarButtonItem(customView: baseView.countView )
+        viewSetting()
+        
+    }
+    
+    //MARK:- func
+    
+    private func viewSetting(){
         baseView.searchView.btn.addTarget(self,
                                           action: #selector(searchBtnTapped),
                                           for: .touchUpInside)
         baseView.scanView.btn.addTarget(self,
                                         action: #selector(scanBtnTapped),
                                         for: .touchUpInside)
+        baseView.checklistBtnView.btn.addTarget(self,
+                                                action: #selector(checkListBtnTapped) ,
+                                                for: .touchUpInside)
+        baseView.countView.btn.addTarget(self,
+                                         action: #selector(checkListBtnTapped) ,
+                                         for: .touchUpInside)
         
-        navigationItem.rightBarButtonItem = UIBarButtonItem(customView: baseView.countView )
-
-
+        baseView.collectionView.delegate = self
+        baseView.collectionView.dataSource = self
+        baseView.tableView.delegate = self
+        baseView.tableView.dataSource = self
+        baseView.searchView.serchTextfield.delegate = self
         
+
     }
     
-    //MARK:- func
+    @objc func checkListBtnTapped (_ sender: UIButton){
+        navigationController?.pushViewController(IngredientListVC(ingredients: chosenIngredients),
+                                                 animated: true)
+    }
+    
     @objc func searchBtnTapped (_ sender: UIButton){
         baseView.stackView.subviews.last?.isHidden.toggle()
         baseView.tableView.isHidden.toggle()
@@ -51,7 +83,7 @@ class ComposeMealVC: UIViewController {
         
         UIViewPropertyAnimator(duration: 0.3, curve: .linear) {
             self.baseView.layoutIfNeeded()
-            self.baseView.checklistBtn.isHidden.toggle()
+            self.baseView.checklistBtnView.isHidden.toggle()
         }.startAnimation()
 
     }
@@ -59,6 +91,8 @@ class ComposeMealVC: UIViewController {
     @objc func scanBtnTapped(_ sender: UIButton){
         
     }
+    
+    
 
     
 
@@ -76,7 +110,10 @@ extension ComposeMealVC : UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: IngredientsTableViewCell.id, for: indexPath) as! IngredientsTableViewCell
         
-        cell.configure(ingredients[indexPath.row])
+        cell.configure(ingredients[indexPath.row], index: indexPath.row)
+        cell.buttonStyleConfigure(style: .add)
+        cell.delegate = self
+
         return cell
     }
     
@@ -86,7 +123,7 @@ extension ComposeMealVC : UITableViewDataSource {
 //MARK:- Collectionview Delegate + DataSource
 
 
-extension ComposeMealVC : UITextFieldDelegate {
+extension ComposeMealVC : UICollectionViewDelegate {
     func textFieldDidBeginEditing(_ textField: UITextField) {
     }
 }
@@ -123,7 +160,28 @@ extension ComposeMealVC : UICollectionViewDataSource {
 }
 
 //MARK:- Textfield Delegate
-extension ComposeMealVC : UICollectionViewDelegateFlowLayout {
+extension ComposeMealVC : UITextFieldDelegate {
+}
+
+
+//MARK:- Cell Button Delegate
+extension ComposeMealVC : ButtonTapedDelegate {
+    func cellBtnTapped(index: Int) {
+        
+        ingredients[index].isSelected.toggle()
+        baseView.tableView.reloadData()
+        baseView.countView.btn.setTitle("\(chosenIngredients.count)", for: .normal)
+//        if add {
+//            chosenIngredients.append(ingredients[index])
+//        }else{
+////            chosenIngredients.remove(at: index)
+//            let ingredient = ingredients[index]
+//            if let index = chosenIngredients.firstIndex(where: {$0.ingredienttitle == ingredient.ingredienttitle}) {
+//                chosenIngredients.remove(at: index)
+//            }
+//        }
+    }
+    
 }
 
 

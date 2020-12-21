@@ -9,13 +9,10 @@ import UIKit
 
 
 class ViewForComposeVC: UIView {
-    
-    weak var controller : ComposeMealVC?
-    
+        
     //MARK:- init()
-    init(_ vc: ComposeMealVC){
+    init(){
         super.init(frame: .zero)
-        self.controller = vc
         self.backgroundColor = .systemBackground
         setTitleLabel()
         setStackView()
@@ -23,7 +20,6 @@ class ViewForComposeVC: UIView {
         setTableView()
         setCollectionView()
         setCheckBtn()
-        searchView.serchTextfield.delegate = controller
     }
     
     required init?(coder: NSCoder) {
@@ -43,8 +39,6 @@ class ViewForComposeVC: UIView {
         tableView.tableHeaderView = headerView
         tableView.register(IngredientsTableViewCell.nib(),
                            forCellReuseIdentifier: IngredientsTableViewCell.id)
-        tableView.delegate = controller
-        tableView.dataSource = controller
 
         return tableView
     }()
@@ -74,8 +68,6 @@ class ViewForComposeVC: UIView {
         
         collectionView.register(IngredientCollectionViewCell.nib(),
                                 forCellWithReuseIdentifier: IngredientCollectionViewCell.id)
-        collectionView.delegate = controller
-        collectionView.dataSource = controller
 
         return collectionView
     }()
@@ -122,7 +114,7 @@ class ViewForComposeVC: UIView {
         return seperateView
     }()
 
-    var checklistBtn = CustomViewFactory.buildButtonView(
+    var checklistBtnView = CustomViewFactory.buildButtonView(
         buttonStyle: .btnWithLeftIcon(UIImage(named: "list")!),
         title: "Check my list",
         backgroundColor: Color.mainOrange,
@@ -130,22 +122,11 @@ class ViewForComposeVC: UIView {
     
     ///searchView with textfield
     var searchView = CustomViewFactory.buildTextFieldView()
+    
+    ///navigationItem rightItem
+    var countView = CountView(isHidden: true)
+    
 
-    lazy var countView: UIView = {
-        let view = UIView(frame: CGRect(x: 0, y: 0, width: 32, height: 32))
-        let countLabel = UILabel(frame: view.frame)
-        countLabel.text = "0"
-        countLabel.font = UIFont.systemFont(ofSize: 14, weight: .bold)
-        countLabel.textAlignment = .center
-        countLabel.textColor = Color.mainOrange
-        view.backgroundColor = Color.lightOrange
-        view.layer.cornerRadius = 8
-        view.addSubview(countLabel)
-        view.isHidden = true
-        
-        
-        return view
-    }()
     
 
     
@@ -168,8 +149,6 @@ class ViewForComposeVC: UIView {
         tableView.leftAnchor.constraint(equalTo: self.leftAnchor, constant: 20).isActive = true
         tableView.rightAnchor.constraint(equalTo: self.rightAnchor, constant: -20).isActive = true
         tableView.bottomAnchor.constraint(equalTo: self.bottomAnchor).isActive = true
-
-        
     }
     
     private func setStackView(){
@@ -205,17 +184,38 @@ class ViewForComposeVC: UIView {
     
     
     private func setCheckBtn() {
-        addSubview(checklistBtn)
-        checklistBtn.isHidden = true
-        checklistBtn.translatesAutoresizingMaskIntoConstraints = false
-        checklistBtn.bottomAnchor.constraint(equalTo: self.safeAreaLayoutGuide.bottomAnchor, constant: 0).isActive = true
-        checklistBtn.leftAnchor.constraint(equalTo: self.leftAnchor, constant: 20).isActive = true
-        checklistBtn.rightAnchor.constraint(equalTo: self.rightAnchor, constant: -20).isActive = true
-        checklistBtn.heightAnchor.constraint(equalToConstant: 50).isActive = true
-
-
+        addSubview(checklistBtnView)
+        checklistBtnView.isHidden = true
+        checklistBtnView.translatesAutoresizingMaskIntoConstraints = false
+        checklistBtnView.bottomAnchor.constraint(equalTo: self.safeAreaLayoutGuide.bottomAnchor, constant: 0).isActive = true
+        checklistBtnView.leftAnchor.constraint(equalTo: self.leftAnchor, constant: 20).isActive = true
+        checklistBtnView.rightAnchor.constraint(equalTo: self.rightAnchor, constant: -20).isActive = true
+        checklistBtnView.heightAnchor.constraint(equalToConstant: 50).isActive = true
     }
 
 }
 
+
+class CountView : UIView {
+    
+    var btn = UIButton()
+    
+    init(isHidden: Bool){
+        super.init(frame: CGRect(x: 0, y: 0, width: 32, height: 32))
+        addSubview(btn)
+        self.isHidden = isHidden
+        btn.frame = frame
+        layer.cornerRadius = 8
+        backgroundColor = Color.lightOrange
+        btn.setTitle("0", for: .normal)
+        btn.titleLabel?.font = UIFont.systemFont(ofSize: 14, weight: .bold)
+        btn.titleLabel?.textAlignment = .center
+        btn.setTitleColor(Color.mainOrange, for: .normal)
+        btn.setTitleColor(.red, for: .highlighted)
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+}
 

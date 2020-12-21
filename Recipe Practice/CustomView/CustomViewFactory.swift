@@ -31,15 +31,9 @@ class CustomViewFactory : UIView {
 
 final class CustomTextfieldView : CustomViewFactory {
     
-    lazy var serchTextfield: UITextField = {
-        let tf = UITextField()
-        return tf
-    }()
-    
-    lazy var btn: UIButton = {
-        let btn = UIButton()
-        return btn
-    }()
+    var serchTextfield = UITextField()
+        
+    var btn = UIButton()
     
     
     fileprivate init(){
@@ -81,7 +75,7 @@ final class CustomTextfieldView : CustomViewFactory {
 
 final class CustomButtonView : CustomViewFactory {
     
-    lazy var titleLabel : UILabel = {
+    var titleLabel : UILabel = {
         let label = UILabel()
         label.font = UIFont.systemFont(ofSize: 15, weight: UIFont.Weight.semibold)
         label.textAlignment = .center
@@ -89,10 +83,7 @@ final class CustomButtonView : CustomViewFactory {
        return label
     }()
     
-    lazy var btn : UIButton = {
-       let btn = UIButton()
-        return btn
-    }()
+    var btn = UIButton()
     
     
     private override init( frame: CGRect) {
@@ -120,6 +111,7 @@ final class CustomButtonView : CustomViewFactory {
             
         case let .btnWithLeftIcon(icon):
             iconViewSetting(icon: icon)
+            
         }
     }
     
@@ -127,6 +119,7 @@ final class CustomButtonView : CustomViewFactory {
         self.addSubview(btn)
         btn.setTitle(title, for: .normal)
         btn.setTitleColor(textColor, for: .normal)
+        btn.setTitleColor(.red, for: .highlighted)
         btn.titleLabel?.font = UIFont.systemFont(ofSize: 15, weight: UIFont.Weight.semibold)
         
         btn.translatesAutoresizingMaskIntoConstraints = false
