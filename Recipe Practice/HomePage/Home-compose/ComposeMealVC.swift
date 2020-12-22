@@ -89,7 +89,9 @@ class ComposeMealVC: UIViewController {
     }
     
     @objc func scanBtnTapped(_ sender: UIButton){
-        
+        navigationController?.pushViewController(ScanVC(),
+                                                 animated: true)
+
     }
     
     

@@ -46,13 +46,14 @@ class ViewForIngredientListVC: UIView {
     
     ///tableview footer
     lazy var footerView: UIView = {
-        let view = UIView(frame: CGRect(x: 0, y: center.y, width: 374, height: 50))
+        
+        let view = UIView(frame: CGRect(x: 0, y: 0, width: 374, height: 50))
         let button = UIButton(frame: view.bounds)
         button.setTitle("Add ingredient", for: .normal)
         button.setTitleColor(Color.mainOrange, for: .normal)
         view.addSubview(button)
         addSubview(view)
-        
+                
         view.addDashedBorder(bordercolor: Color.mainOrange)
         return view
     }()

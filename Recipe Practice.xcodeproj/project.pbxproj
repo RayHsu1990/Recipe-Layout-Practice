@@ -41,6 +41,9 @@
 		FBE25189258DEEC700F7C63C /* IngredientCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FBE25187258DEEC700F7C63C /* IngredientCollectionViewCell.xib */; };
 		FBE675BB25903DE600D9CBD0 /* ViewForIngredientListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBE675BA25903DE600D9CBD0 /* ViewForIngredientListVC.swift */; };
 		FBE675BF2590AD6200D9CBD0 /* View Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBE675BE2590AD6200D9CBD0 /* View Extension.swift */; };
+		FBE675C32590DBC700D9CBD0 /* ScanVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBE675C22590DBC700D9CBD0 /* ScanVC.swift */; };
+		FBE675C72590DC2900D9CBD0 /* ViewForScanVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBE675C62590DC2900D9CBD0 /* ViewForScanVC.swift */; };
+		FBE675CC2591967400D9CBD0 /* LabelWithInset.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBE675CB2591967400D9CBD0 /* LabelWithInset.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -80,6 +83,9 @@
 		FBE25187258DEEC700F7C63C /* IngredientCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = IngredientCollectionViewCell.xib; sourceTree = "<group>"; };
 		FBE675BA25903DE600D9CBD0 /* ViewForIngredientListVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewForIngredientListVC.swift; sourceTree = "<group>"; };
 		FBE675BE2590AD6200D9CBD0 /* View Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View Extension.swift"; sourceTree = "<group>"; };
+		FBE675C22590DBC700D9CBD0 /* ScanVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScanVC.swift; sourceTree = "<group>"; };
+		FBE675C62590DC2900D9CBD0 /* ViewForScanVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewForScanVC.swift; sourceTree = "<group>"; };
+		FBE675CB2591967400D9CBD0 /* LabelWithInset.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LabelWithInset.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -169,6 +175,7 @@
 				FB6E53F5258CD8E100E6FAA4 /* Home */,
 				FB27B152258B78AF00766BBA /* Home-compose */,
 				FB2B491F258EFA840081EE63 /* Home-IngredientList */,
+				FBE675C12590DB9600D9CBD0 /* Home-Scan */,
 			);
 			path = HomePage;
 			sourceTree = "<group>";
@@ -181,6 +188,7 @@
 				FB6E53FF258CD9CE00E6FAA4 /* Reusable.swift */,
 				FBE25181258DEB4200F7C63C /* Button Extension.swift */,
 				FBE675BE2590AD6200D9CBD0 /* View Extension.swift */,
+				FBE675CB2591967400D9CBD0 /* LabelWithInset.swift */,
 			);
 			path = Helper;
 			sourceTree = "<group>";
@@ -319,6 +327,23 @@
 			path = CollectionViewCell;
 			sourceTree = "<group>";
 		};
+		FBE675C12590DB9600D9CBD0 /* Home-Scan */ = {
+			isa = PBXGroup;
+			children = (
+				FBE675C22590DBC700D9CBD0 /* ScanVC.swift */,
+				FBE675C52590DC0B00D9CBD0 /* View */,
+			);
+			path = "Home-Scan";
+			sourceTree = "<group>";
+		};
+		FBE675C52590DC0B00D9CBD0 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				FBE675C62590DC2900D9CBD0 /* ViewForScanVC.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -398,10 +423,13 @@
 			files = (
 				FB27B161258C9D2F00766BBA /* ViewForComposeVC.swift in Sources */,
 				FB4F32332589A36400EC89EF /* SmallCollectionViewCell.swift in Sources */,
+				FBE675CC2591967400D9CBD0 /* LabelWithInset.swift in Sources */,
 				FBE25182258DEB4200F7C63C /* Button Extension.swift in Sources */,
 				FB4F321C258910DF00EC89EF /* CustomTabbar.swift in Sources */,
+				FBE675C72590DC2900D9CBD0 /* ViewForScanVC.swift in Sources */,
 				FB2CCA1D2588BBC300B189DA /* HomeVC.swift in Sources */,
 				FBE25188258DEEC700F7C63C /* IngredientCollectionViewCell.swift in Sources */,
+				FBE675C32590DBC700D9CBD0 /* ScanVC.swift in Sources */,
 				FBE675BB25903DE600D9CBD0 /* ViewForIngredientListVC.swift in Sources */,
 				FB4F32162588F66500EC89EF /* Color.swift in Sources */,
 				FB2B4921258EFAF30081EE63 /* IngredientListVC.swift in Sources */,
