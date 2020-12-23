@@ -115,6 +115,7 @@ class ViewForScan : UIView {
         let stackView = UIStackView(arrangedSubviews: [addBtnView, cancelBtnView])
         stackView.axis = .vertical
         stackView.alignment = .fill
+        stackView.distribution = .fillEqually
         stackView.spacing = 20
         
         return stackView

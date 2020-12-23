@@ -21,23 +21,9 @@ class RecipeTableViewCell: UITableViewCell, Reusable {
     @IBOutlet weak var rectangleBtn : UIButton!
     @IBOutlet weak var shareBtn : UIButton!
     
+
+    @IBOutlet var hatImages: [UIImageView]!
     
-//    let fullHatImage = UIImageView(image: UIImage(named: "hatfull")!)
-    let fullHatImage : UIImageView = {
-        let imageView = UIImageView(frame: CGRect(x: 0, y: 0, width: 11, height: 9))
-        imageView.image = UIImage(named: "hatfull")!
-        return imageView
-    }()
-
-    let emptyHatImage : UIImageView = {
-        let imageView = UIImageView(frame: CGRect(x: 0, y: 0, width: 11, height: 9))
-        imageView.image = UIImage(named: "hatempty")!
-        return imageView
-    }()
-
-//    let emptyHatImage = UIImageView(image: UIImage(named: "hatempty")!)
-
-
     override func awakeFromNib() {
         super.awakeFromNib()
         btnSetting()
@@ -55,12 +41,12 @@ class RecipeTableViewCell: UITableViewCell, Reusable {
     public func configure(model: Recipe){
         recipeImage.image = model.recipeImage
         recipeName.text = model.recipeName
-        hatRateLabel.text = "\(model.hatFloat)"
         starImage.image = model.difficaulty.image
         difficalityLabel.text = model.difficaulty.capStr
+        hatImageSetting(rate: model.hatRate)
+        hatRateLabel.text = "\(model.hatFloat)"
+        cookTimeLabel.text = cookTimeLabelSetting(time: model.cookTime)
         
-        addHat(count: model.hatRate)
-        print(hatStackView.subviews)
     }
     
     private func btnSetting(){
@@ -70,19 +56,24 @@ class RecipeTableViewCell: UITableViewCell, Reusable {
 
     }
     
-    private func addHat(count:Int){
-        let fullHats = Array(repeating: fullHatImage, count: count)
-        let emptyHats = Array(repeating: emptyHatImage, count: 5 - count )
-
-        let imageViews = [fullHats, emptyHats].flatMap{$0}
-        print("-------------------------------\(imageViews.count)")
-
-        for i in imageViews {
-            hatStackView.addArrangedSubview(i)
+    private func cookTimeLabelSetting(time: (Int,Int)) -> String{
+        
+        if time.0 <= 0 {
+            return "\(time.1) m"
+        }else if time.1 <= 0 {
+            return "\(time.0) h"
+        }else {
+            return "\(time.0) h \(time.1) m"
         }
-        print("==============\(hatStackView.subviews.count) ========")
-
+        
+    }
+    
+    private func hatImageSetting(rate: Int){
+        for i in 0...(rate - 1){
+            hatImages[i].image = UIImage(named: "hatfull")
+        }
     }
 
 
 }
+

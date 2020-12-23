@@ -22,6 +22,8 @@ class PreparingVC: UIViewController {
         navigationController?.navigationBar.shadowImage = UIImage()
         navigationController?.navigationBar.layoutIfNeeded()
         navigationItem.title = "PREPARING RECIPES"
+        navigationItem.backButtonTitle = ""
+
     }
     
     override func viewDidLoad() {

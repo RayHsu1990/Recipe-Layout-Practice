@@ -24,10 +24,20 @@ class PreparedRecipeVC: UIViewController {
         super.viewDidLoad()
         baseView.tableView.delegate = self
         baseView.tableView.dataSource = self
+        baseView.headerView.popularBtn.addTarget(self, action: #selector(popularBtnTapped), for: .touchUpInside)
+        
+        navigationController?.navigationBar.setBackgroundImage(UIImage(), for:.default)
+        navigationController?.navigationBar.shadowImage = UIImage()
+        navigationController?.navigationBar.layoutIfNeeded()
+        navigationItem.title = "PREPARED RECIPES"
 
     }
     
-
+    @objc func popularBtnTapped (){
+        baseView.headerView.nameBtn.isHidden.toggle()
+        baseView.headerView.timeBtn.isHidden.toggle()
+        baseView.headerView.stackView.backgroundColor = baseView.headerView.nameBtn.isHidden ? .clear : Color.tfBackgroundColor
+    }
 
 }
 

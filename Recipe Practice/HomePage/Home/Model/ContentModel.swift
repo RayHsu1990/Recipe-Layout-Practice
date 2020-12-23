@@ -94,7 +94,7 @@ protocol PagingDelegate{
 }
 
 
-enum MainPageContentStyle: Int {
+enum MainPageContentStyle: Int, CaseIterable {
     case largeContent , smallContent , mediumContent, recipeWithRate
 }
 

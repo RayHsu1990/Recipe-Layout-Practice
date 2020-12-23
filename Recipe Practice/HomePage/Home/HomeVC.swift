@@ -14,6 +14,8 @@ class HomeVC: UIViewController {
     @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var tabBar : CustomTabbar!
     
+    var sections: [MainPageContentStyle] = MainPageContentStyle.allCases
+    
     var largeContents : [Content] = Content.getLargeContents()
     var smallContents : [Content] = Content.getSmallContents()
     var mediumContents : [Content] = Content.getMediumContents()
@@ -76,7 +78,7 @@ extension HomeVC : UICollectionViewDataSource {
     
     
     func numberOfSections(in collectionView: UICollectionView) -> Int {
-        3
+        sections.count
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -84,12 +86,7 @@ extension HomeVC : UICollectionViewDataSource {
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        
-        guard let section = MainPageContentStyle(rawValue: indexPath.section) else {
-            return UICollectionViewCell()
-        }
-        
-        switch section {
+        switch sections[indexPath.section] {
         case .largeContent:
             let cell = collectionView.dequeueReusableCell(
                 withReuseIdentifier: LargCollectionViewCellVC.id,
