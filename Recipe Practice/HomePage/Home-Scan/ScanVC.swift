@@ -11,13 +11,17 @@ class ScanVC: UIViewController {
     
     private var baseView = ViewForScan()
     
-    private var searchedIngredient: [Ingredient] = Ingredient.getSearchedIngrents()
+    private var searchedIngredient: [Ingredient] = Ingredient.getSimilarProduct()
 
     
     
     override func loadView() {
         super.loadView()
         view = baseView
+        navigationController?.navigationBar.setBackgroundImage(UIImage(), for:.default)
+        navigationController?.navigationBar.shadowImage = UIImage()
+        navigationController?.navigationBar.layoutIfNeeded()
+
     }
 
     override func viewDidLoad() {

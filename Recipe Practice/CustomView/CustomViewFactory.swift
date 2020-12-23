@@ -100,7 +100,7 @@ final class CustomButtonView : CustomViewFactory {
                                  _ backgroundColor: UIColor,
                                  _ textColor: UIColor){
         self.init()
-        layer.cornerRadius = 8
+        layer.cornerRadius = 10
         self.backgroundColor = backgroundColor
         btnSetting(title: title, textColor: textColor)
         

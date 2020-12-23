@@ -22,6 +22,8 @@ class ViewForScan : UIView {
         seperatorSetting()
         collectionViewHeaderSetting()
         collectionViewSetting()
+        setStackView()
+        
     }
     
     required init?(coder: NSCoder) {
@@ -33,7 +35,7 @@ class ViewForScan : UIView {
     var collectionView : UICollectionView = {
         let layout = UICollectionViewFlowLayout()
         layout.itemSize = CGSize(width: 82,
-                                 height: 170)
+                                 height: 160)
         layout.sectionInset = UIEdgeInsets(top: 0,
                                            left: 20,
                                            bottom: 0,
@@ -62,13 +64,9 @@ class ViewForScan : UIView {
         view.backgroundColor = Color.lightOrange
         view.layer.cornerRadius = 100
         return view
-        
     }()
     
-    var productImage : UIImageView = {
-        let imageView = UIImageView()
-        return imageView
-    }()
+    var productImage = UIImageView()
     
     var productTitleLabel : UILabel = {
         let label = UILabel()
@@ -109,17 +107,31 @@ class ViewForScan : UIView {
     }()
     
     
+    var addBtnView = CustomViewFactory.buildButtonView(buttonStyle: .normal, title: "Add ingredient", backgroundColor: Color.mainOrange, textColor: .systemBackground)
+    
+    var cancelBtnView = CustomViewFactory.buildButtonView(buttonStyle: .normal, title: "Cancel", backgroundColor: Color.lightOrange, textColor: Color.mainOrange)
+
+    lazy var stackView : UIStackView = {
+        let stackView = UIStackView(arrangedSubviews: [addBtnView, cancelBtnView])
+        stackView.axis = .vertical
+        stackView.alignment = .fill
+        stackView.spacing = 20
+        
+        return stackView
+    }()
+
+    
     //MARK:- layout setting func
     
     private func backgroundViewSetting(){
         addSubview(backgroundView)
         backgroundView.translatesAutoresizingMaskIntoConstraints = false
-        backgroundView.topAnchor.constraint(equalTo: topAnchor).isActive = true
+        backgroundView.topAnchor.constraint(equalTo: topAnchor,constant: -100).isActive = true
         backgroundView.leftAnchor.constraint(equalTo: leftAnchor).isActive = true
         backgroundView.rightAnchor.constraint(equalTo: rightAnchor).isActive = true
-        backgroundView.heightAnchor.constraint(equalToConstant: 300).isActive = true
-
+        backgroundView.heightAnchor.constraint(equalToConstant: 400).isActive = true
     }
+    
     private func imgaeViewSetting(){
         addSubview(productImage)
         
@@ -177,6 +189,21 @@ class ViewForScan : UIView {
         collectionView.rightAnchor.constraint(equalTo: rightAnchor).isActive = true
         collectionView.heightAnchor.constraint(equalToConstant: 180).isActive = true
 
+    }
+    
+    private func setStackView() {
+        addSubview(stackView)
+        stackView.translatesAutoresizingMaskIntoConstraints = false
+        stackView.leftAnchor.constraint(equalTo: leftAnchor, constant: 20).isActive = true
+        stackView.rightAnchor.constraint(equalTo: rightAnchor, constant: -20).isActive = true
+        stackView.bottomAnchor.constraint(equalTo: layoutMarginsGuide.bottomAnchor).isActive = true
+        addBtnView.heightAnchor.constraint(equalToConstant: 50).isActive = true
+        cancelBtnView.heightAnchor.constraint(equalToConstant: 50).isActive = true
+
+
+
+
+        
     }
     
 }

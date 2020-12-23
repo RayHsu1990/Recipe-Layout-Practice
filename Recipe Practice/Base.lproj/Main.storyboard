@@ -81,10 +81,10 @@
             </objects>
             <point key="canvasLocation" x="2335" y="230"/>
         </scene>
-        <!--View Controller-->
+        <!--Prepared RecipeVC-->
         <scene sceneID="yga-oM-9mX">
             <objects>
-                <viewController id="1z6-zs-wpy" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="PreparedRecipeVC" id="1z6-zs-wpy" customClass="PreparedRecipeVC" customModule="Recipe_Practice" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="d3M-MJ-XIh">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="808"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -170,7 +170,7 @@
         <!--Custom Tabbar-->
         <scene sceneID="e34-YB-H1m">
             <objects>
-                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="KLm-x8-rwx" customClass="CustomTabbar" customModule="Recipe_Practice" customModuleProvider="target" sceneMemberID="viewController">
+                <tabBarController storyboardIdentifier="CustomTabbar" automaticallyAdjustsScrollViewInsets="NO" id="KLm-x8-rwx" customClass="CustomTabbar" customModule="Recipe_Practice" customModuleProvider="target" sceneMemberID="viewController">
                     <toolbarItems/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="vbY-JI-QQX">
                         <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
@@ -179,7 +179,7 @@
                     </tabBar>
                     <connections>
                         <segue destination="BYZ-38-t0r" kind="relationship" relationship="viewControllers" id="ARd-S4-ghd"/>
-                        <segue destination="1z6-zs-wpy" kind="relationship" relationship="viewControllers" id="MlR-iF-K55"/>
+                        <segue destination="1z6-zs-wpy" kind="relationship" relationship="viewControllers" destinationCreationSelector="PreparedRecipeVC" id="MlR-iF-K55"/>
                         <segue destination="6II-MX-YNc" kind="relationship" relationship="viewControllers" id="vCx-Ic-MUm"/>
                         <segue destination="tk5-Z4-AnI" kind="relationship" relationship="viewControllers" id="WaO-k3-TGc"/>
                         <segue destination="YWg-8f-F4a" kind="relationship" relationship="viewControllers" id="Cxu-pA-aNt"/>

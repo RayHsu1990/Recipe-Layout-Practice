@@ -42,7 +42,6 @@ class ComposeMealVC: UIViewController {
         navigationItem.backButtonTitle = ""
         navigationItem.rightBarButtonItem = UIBarButtonItem(customView: baseView.countView )
         viewSetting()
-        
     }
     
     //MARK:- func

@@ -12,6 +12,7 @@ import UIKit
 class HomeVC: UIViewController {
     
     @IBOutlet weak var collectionView: UICollectionView!
+    @IBOutlet weak var tabBar : CustomTabbar!
     
     var largeContents : [Content] = Content.getLargeContents()
     var smallContents : [Content] = Content.getSmallContents()
@@ -21,6 +22,7 @@ class HomeVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         collectionSetting()
+        
     }
     
     

@@ -47,4 +47,37 @@ extension Ingredient{
         ]
         
     }
+    
+    
+    static func getSimilarProduct() -> [Ingredient] {
+        return [
+            Ingredient(ingredientImage: UIImage(named: "bbq1") ?? UIImage(systemName: "photo")!, ingredienttitle: "Biggs’Famous BBQ Suace"),
+            
+            Ingredient(ingredientImage: UIImage(named: "bbq2") ?? UIImage(systemName: "photo")!, ingredienttitle: "Kinder’s Organic mild BBQ Sauce"),
+            
+            Ingredient(ingredientImage: UIImage(named: "bbq3") ?? UIImage(systemName: "photo")!, ingredienttitle: "Biggs’ Famous BBQ Suace"),
+            
+            Ingredient(ingredientImage: UIImage(named: "bbq4") ?? UIImage(systemName: "photo")!, ingredienttitle: "Kinder’s Organic mild BBQ Sauce"),
+            
+            Ingredient(ingredientImage: UIImage(named: "bbq1") ?? UIImage(systemName: "photo")!, ingredienttitle: "Biggs’Famous BBQ Suace"),
+            
+            Ingredient(ingredientImage: UIImage(named: "bbq2") ?? UIImage(systemName: "photo")!, ingredienttitle: "Kinder’s Organic mild BBQ Sauce"),
+            
+            Ingredient(ingredientImage: UIImage(named: "bbq3") ?? UIImage(systemName: "photo")!, ingredienttitle: "Biggs’ Famous BBQ Suace"),
+            
+            Ingredient(ingredientImage: UIImage(named: "bbq4") ?? UIImage(systemName: "photo")!, ingredienttitle: "Kinder’s Organic mild BBQ Sauce"),
+            
+            Ingredient(ingredientImage: UIImage(named: "bbq1") ?? UIImage(systemName: "photo")!, ingredienttitle: "Biggs’Famous BBQ Suace"),
+            
+            Ingredient(ingredientImage: UIImage(named: "bbq2") ?? UIImage(systemName: "photo")!, ingredienttitle: "Kinder’s Organic mild BBQ Sauce"),
+            
+            Ingredient(ingredientImage: UIImage(named: "bbq3") ?? UIImage(systemName: "photo")!, ingredienttitle: "Biggs’ Famous BBQ Suace"),
+            
+            Ingredient(ingredientImage: UIImage(named: "bbq4") ?? UIImage(systemName: "photo")!, ingredienttitle: "Kinder’s Organic mild BBQ Sauce")
+
+        ]
+        
+    }
+    
+    
 }

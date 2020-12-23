@@ -45,11 +45,15 @@ class IngredientListVC: UIViewController {
         super.viewDidLoad()
         baseView.tableView.delegate = self
         baseView.tableView.dataSource = self
-
+        baseView.searchRecipeBtn.btn.addTarget(self, action: #selector(searchRecipeBtnTapped), for: .touchUpInside)
     }
     
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
+    }
+    
+    @objc func searchRecipeBtnTapped(){
+        navigationController?.pushViewController(PreparingVC(), animated: true)
     }
     
 

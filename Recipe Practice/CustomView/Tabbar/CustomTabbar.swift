@@ -7,7 +7,7 @@
 
 import UIKit
 
-class CustomTabbar: UITabBarController {
+class CustomTabbar: UITabBarController, Reusable {
     
     lazy var searchBtn : UIButton = {
         let searchBtn = UIButton(frame: CGRect(x: self.view.center.x - 29,
